@@ -46,7 +46,7 @@ you can use the ~iscroll-mode~ like following:
         (iscroll-down)
       (evil-previous-visual-line)))
 	;; ...
-	(define-key evil-normal-state-map (kbd "C-n") 'scroll-up-org-mode)
+  (define-key evil-normal-state-map (kbd "C-n") 'scroll-up-org-mode)
   (define-key evil-normal-state-map (kbd "C-p") 'scroll-down-org-mode)
 
   ;; ...
