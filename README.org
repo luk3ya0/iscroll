@@ -53,4 +53,4 @@ you can use the ~iscroll-mode~ like following:
 )
 #+end_src
 
-Upon the cursor arrives at the images, use <kdb>Ctrl</kdb>+<kdb>n</kdb> or <kdb>Ctrl</kdb>+<kdb>p</kdb> to scroll smoothly.
+Upon the cursor arrives at the images, use c+n or c+p to scroll smoothly.
