@@ -28,3 +28,29 @@ This mode remaps mouse scrolling functions and ~next/previous-line~. If you use 
 * Evil mode
 
 Iscroll.el doesn’t work with Evil out-of-the-box. You need to add some boilerplate.
+
+you can use the ~iscroll-mode~ like following:
+
+#+begin_src elisp
+(with-eval-after-load 'evil
+  ;; ...
+  (defun scroll-up-org-mode()
+    (interactive)
+    (if (eq major-mode 'org-mode)
+        (iscroll-up)
+      (evil-next-visual-line)))
+
+  (defun scroll-down-org-mode()
+    (interactive)
+    (if (eq major-mode 'org-mode)
+        (iscroll-down)
+      (evil-previous-visual-line)))
+	;; ...
+	(define-key evil-normal-state-map (kbd "C-n") 'scroll-up-org-mode)
+  (define-key evil-normal-state-map (kbd "C-p") 'scroll-down-org-mode)
+
+  ;; ...
+)
+#+end_src
+
+Upon the cursor arrives at the images, use <kdb>Ctrl</kdb>+<kdb>n</kdb> or <kdb>Ctrl</kdb>+<kdb>p</kdb> to scroll smoothly.
